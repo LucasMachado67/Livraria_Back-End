@@ -1,0 +1,103 @@
+<header class="sticky-top">
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary"
+  >
+    <a class="navbar-brand" href="#"
+      ><img src="../../../assets/dia-mundial-do-livro.png" alt="" />Livraria</a
+    >
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex w-100 justify-content-center" (submit)="onSearch($event)">
+          <input 
+            type="text" 
+            placeholder="Search books..." 
+            [(ngModel)]="searchTerm"
+            name="search"
+            [ngModelOptions]="{standalone: true}"
+            (input)="onSearch()" 
+            class="searchInput"/>
+        </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"
+              ><i class="fa-solid fa-heart fa-2xl"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              ><i class="fa-solid fa-user fa-2xl"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav flex-fill">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">CATEGORIES</a>
+            <div class="dropdown-menu">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6"> <!-- Primeira coluna -->
+                    <h6>BOOKS</h6>
+                    <ul class="list-unstyled">
+                      <li><a class="dropdown-item" href="#">Biographies & Memoirs</a></li>
+                      <li><a class="dropdown-item" href="#">Children's Books</a></li>
+                      <li><a class="dropdown-item" href="#">Computers & Technology</a></li>
+                      <li><a class="dropdown-item" href="#">Cookbooks, Food</a></li>
+                      <li><a class="dropdown-item" href="#">Education & Teaching</a></li>
+                      <li><a class="dropdown-item" href="#">Health, Fitness & Dieting</a></li>
+                      <li><a class="dropdown-item" href="#">History</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6"> <!-- Segunda coluna -->
+                    <ul class="list-unstyled">
+                      <li><a class="dropdown-item" href="#">Humor & Entertainment</a></li>
+                      <li><a class="dropdown-item" href="#">Literature & Fiction</a></li>
+                      <li><a class="dropdown-item" href="#">Mangas</a></li>
+                      <li><a class="dropdown-item" href="#">Mystery, Thriller & Suspense</a></li>
+                      <li><a class="dropdown-item" href="#">Romance</a></li>
+                      <li><a class="dropdown-item" href="#">Science Fiction & Fantasy</a></li>
+                      <li><a class="dropdown-item" href="#">Self-Help</a></li>
+                      <li><a class="dropdown-item" href="#">Teen & Young Adult</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MY CART</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">WISH LIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+          <li class="nav-item" *ngIf="!hideUsersAndBooks">
+            <a class="nav-link" href="#">USERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/newBook" routerLinkActive="active">ADD BOOK</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
