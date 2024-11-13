@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Book } from '../../Model/Book';
 import { BookService } from '../../service/book.service';
-import { RouterLink, RouterLinkActive,RouterOutlet,RouterModule, Router } from '@angular/router';
+import { RouterLink, RouterLinkActive,RouterOutlet,RouterModule } from '@angular/router';
 import { SearchService } from '../../service/search.service';
 import { FilterComponent } from '../filter/filter.component';
 import { Filter } from '../../Model/Filter';
