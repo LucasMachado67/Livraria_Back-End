@@ -1,26 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { SearchService } from '../../service/search.service';
-import { CategoryService } from '../../service/category.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ CommonModule, RouterLink, RouterLinkActive, RouterModule, RouterOutlet,FormsModule],
+  imports: [ CommonModule, RouterLink, RouterLinkActive, RouterModule,FormsModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
+  userName: string | null = null;
   hideUsersAndBooks: boolean = true;
   searchTerm: string = '';
+  
 
   constructor(private http: HttpClient,
               private searchService: SearchService,
-              private categoryService: CategoryService) {}
+              private router: Router) {}
 
 
   onSearch(event?: Event): void {
@@ -41,5 +42,18 @@ export class HeaderComponent {
     } else {
       this.searchService.updateResults([]);
     }
+  }
+
+  //Navigation between pages
+  navigateToPage(page: string) {
+    if (page === 'profile') {
+      this.router.navigate(['/user/myprofile']);
+    } else if (page === 'favorites') {
+      this.router.navigate(['/user/favorites']);
+    }
+  }
+
+  ngOnInit() {
+    this.userName = sessionStorage.getItem("username"); // Obtém o nome do usuário ao inicializar o header
   }
 }

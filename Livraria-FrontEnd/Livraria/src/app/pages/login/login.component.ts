@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { DefaultLoginLayoutComponent } from "../default-login-layout/default-login-layout.component";
+import { DefaultLoginLayoutComponent } from '../../components/loginAndRegistration/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../primary-input/primary-input.component';
+import { PrimaryInputComponent } from '../../components/loginAndRegistration/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../service/login.service';
+import { LoginService } from '../../service/login.service';
 import { ToastrService } from 'ngx-toastr';
 
 interface LoginForm {
@@ -37,7 +37,10 @@ export class LoginComponent {
 
     submit(){
       this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-        next: () => this.toastService.success("Sign In successfuly made!"),
+        next: () => {
+          this.toastService.success("Sign In successfuly made!"),
+          this.router.navigate(["home"]);
+        },
         error: () => this.toastService.error("Something went wrong, Try again later")
       })
     }
