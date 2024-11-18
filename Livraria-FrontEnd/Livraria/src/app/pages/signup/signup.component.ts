@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { DefaultLoginLayoutComponent } from "../default-login-layout/default-login-layout.component";
+import { DefaultLoginLayoutComponent } from '../../components/loginAndRegistration/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../primary-input/primary-input.component';
+import { PrimaryInputComponent } from '../../components/loginAndRegistration/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../service/login.service';
+import { LoginService } from '../../service/login.service';
 import { ToastrService } from 'ngx-toastr';
 
 interface SignupForm {

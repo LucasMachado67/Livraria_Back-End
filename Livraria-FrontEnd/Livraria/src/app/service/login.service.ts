@@ -7,7 +7,7 @@ import { tap } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-
+  
   private apiUrl: string = "http://localhost:8080"
 
   constructor(private httpClient: HttpClient) { }
@@ -28,5 +28,10 @@ export class LoginService {
         sessionStorage.setItem("username", value.name)
       })
     )
+  }
+
+  logout(){
+    sessionStorage.removeItem("auth-token");
+    sessionStorage.removeItem("username");
   }
 }
