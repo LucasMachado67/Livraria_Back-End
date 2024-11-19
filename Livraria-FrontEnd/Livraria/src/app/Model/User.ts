@@ -1,9 +1,7 @@
-// export class Book{
+export class User{
 
-//     id:number = 0;
-//     email: string = "";
-//     name: string = "";
-//     password: string = "";
-//     role: string = "";
-
-// }
+    id:number = 0;
+    email: string = "";
+    name: string = "";
+    password: string = "";
+}

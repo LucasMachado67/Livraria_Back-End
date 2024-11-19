@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { NewBookComponent } from './components/new-book/new-book.component';
-import { BookViewComponent } from './components/book-view/book-view.component';
-import { LoginComponent } from './components/loginAndRegistration/login/login.component';
-import { SignUpComponent } from './components/loginAndRegistration/signup/signup.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NewBookComponent } from './pages/new-book/new-book.component';
+import { BookViewComponent } from './pages/book-view/book-view.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/signup/signup.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 export const routes: Routes = [
@@ -15,7 +16,7 @@ export const routes: Routes = [
     },
     {
         path: 'newBook',
-        loadComponent: () => import('./components/new-book/new-book.component').then((c) => c.NewBookComponent)
+        loadComponent: () => import('./pages/new-book/new-book.component').then((c) => c.NewBookComponent)
     },
     {
         path: "books/:code", component: BookViewComponent
@@ -25,5 +26,8 @@ export const routes: Routes = [
     },
     {
         path: "signup", component: SignUpComponent
+    },
+    {
+        path: "user/myprofile", component: ProfileComponent
     }
 ];

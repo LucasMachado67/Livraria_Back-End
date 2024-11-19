@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
-import { ActivatedRoute, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "../../components/header/header.component";
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Book } from '../../Model/Book';
 import { BookService } from '../../service/book.service';
-import { NgModel } from '@angular/forms';
 import { NgIf, NgFor } from '@angular/common';
 
 
@@ -12,10 +11,7 @@ import { NgIf, NgFor } from '@angular/common';
   standalone: true,
   imports: [
     HeaderComponent,
-    RouterLink,
-    RouterLinkActive,
     RouterModule,
-    RouterOutlet,
     NgIf,
     NgFor
   ],
