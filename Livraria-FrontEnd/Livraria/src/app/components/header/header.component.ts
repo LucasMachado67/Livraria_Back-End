@@ -53,7 +53,5 @@ export class HeaderComponent {
     }
   }
 
-  ngOnInit() {
-    this.userName = sessionStorage.getItem("username"); // Obtém o nome do usuário ao inicializar o header
-  }
+
 }
