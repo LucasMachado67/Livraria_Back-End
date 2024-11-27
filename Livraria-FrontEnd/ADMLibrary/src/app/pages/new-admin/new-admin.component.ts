@@ -18,8 +18,6 @@ import { FormsModule } from '@angular/forms';
 export class NewEmployeeComponent {
 
   admin = new Admin();
-  // table:Boolean = true;
-  admins:Admin[] = [];
 
   constructor(
     private service:AdminService
@@ -35,5 +33,16 @@ export class NewEmployeeComponent {
 
       alert("Admin successfully registered!");
     });
+  }
+
+  formatPhone(): void {
+    let phone = this.admin.phone.replace(/\D/g, ''); // Remove todos os caracteres que não são dígitos
+    if (phone.length > 2) {
+      phone = phone.substring(0, 2) + ' ' + phone.substring(2);
+    }
+    if (phone.length > 7) {
+      phone = phone.substring(0, 7) + '-' + phone.substring(7, 11);
+    }
+    this.admin.phone = phone;
   }
 }

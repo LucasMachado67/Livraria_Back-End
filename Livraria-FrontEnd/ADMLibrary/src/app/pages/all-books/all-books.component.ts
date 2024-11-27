@@ -22,7 +22,6 @@ import { Router } from '@angular/router';
 export class AllBooksComponent {
 
   book = new Book();
-  btnRegister:Boolean = true;
   table:Boolean = true;
   books:Book[] = [];
   selectedImage: File | null = null;

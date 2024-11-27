@@ -3,6 +3,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AllBooksComponent } from './pages/all-books/all-books.component';
 import { EditBookComponent } from './pages/edit-book/edit-book.component';
 import { NewEmployeeComponent } from './pages/new-admin/new-admin.component';
+import { AllAdminsComponent } from './pages/all-admins/all-admins.component';
+import { EditAdminComponent } from './pages/edit-admin/edit-admin.component';
 
 export const routes: Routes = [
     {
@@ -23,5 +25,11 @@ export const routes: Routes = [
     },
     {
         path: "newAdmin", component: NewEmployeeComponent
+    },
+    {
+        path: "allAdmins", component: AllAdminsComponent
+    },
+    {
+        path: "allAdmins/:id", component: EditAdminComponent
     }
 ];
