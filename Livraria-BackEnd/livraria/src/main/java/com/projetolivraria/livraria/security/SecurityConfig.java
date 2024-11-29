@@ -41,6 +41,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/books").permitAll()
                         .requestMatchers(HttpMethod.POST, "/newBook").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/newErrand").permitAll()
                         .requestMatchers(HttpMethod.GET, "/books/{code}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/books/{code}").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/books/{code}").permitAll()

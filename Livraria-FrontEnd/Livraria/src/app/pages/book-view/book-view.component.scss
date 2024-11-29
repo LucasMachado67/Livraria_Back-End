@@ -67,9 +67,15 @@
 
             .buy{
                 background-color: purple;
+                &:hover{
+                    background-color: rgb(166, 84, 166);
+                }
             }
             .cart{
                 background-color: rgb(166, 84, 166);
+                &:hover{
+                    background-color: purple;
+                }
             }
         }
     }
