@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     RouterModule
-  ],
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

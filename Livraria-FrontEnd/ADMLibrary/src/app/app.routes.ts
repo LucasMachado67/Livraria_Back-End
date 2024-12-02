@@ -5,6 +5,7 @@ import { EditBookComponent } from './pages/edit-book/edit-book.component';
 import { NewEmployeeComponent } from './pages/new-admin/new-admin.component';
 import { AllAdminsComponent } from './pages/all-admins/all-admins.component';
 import { EditAdminComponent } from './pages/edit-admin/edit-admin.component';
+import { AllErrandsComponent } from './pages/all-errands/all-errands.component';
 
 export const routes: Routes = [
     {
@@ -31,5 +32,8 @@ export const routes: Routes = [
     },
     {
         path: "allAdmins/:id", component: EditAdminComponent
+    },
+    {
+        path: "allErrands",component: AllErrandsComponent
     }
 ];
